@@ -21,7 +21,7 @@ app.use(cors());
 require('./routes') (app);
 
 //setup backend localhost ONCE sequelize has synced with the sql lite database
-sequelize.sync().then(() =>{
+sequelize.sync({force: false}).then(() =>{
     app.listen(config.port);
     console.log("server has started on port 8081")
 });

@@ -1,14 +1,14 @@
 <template>
   <div id="app">
     <v-app>
-      <page-header/>
+      <page-header />
+      
       <main>
-        <v-container fluid> 
+        <v-container fluid>
           <router-view></router-view>
         </v-container>
       </main>
     </v-app>
-    <!-- <img src="./assets/logo.png"> -->
   </div>
 </template>
 
@@ -17,11 +17,9 @@ import PageHeader from '@/components/Header.vue'
 
 export default {
   name: 'app',
-
   components: {
     PageHeader
   }
-
 }
 </script>
 
@@ -35,15 +33,7 @@ export default {
   margin-top: 60px;
 }
 
-.input-group--text-field input {
-  border-bottom: 1px solid black;
-}
-
-.toolbar__title{
-  color: white;
-}
-
-.btn__content {
-  color: white;
+.danger-alert {
+  color: red;
 }
 </style>

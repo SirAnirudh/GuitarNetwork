@@ -1,10 +1,20 @@
-const AuthController = require('./controllers/AuthController');
-const AuthenticationControllerPolicy = require('./policies/AuthControllerPolicy');
+const AuthenticationController = require('./controllers/AuthController')
+const AuthenticationControllerPolicy = require('./policies/AuthControllerPolicy')
+const SongsController = require('./controllers/SongsController')
 
 module.exports = (app) => {
-    //define an endpoint with a get request and what it sends
-    app.post('/register', AuthenticationControllerPolicy.register, AuthController.register)
-    app.post('/login', AuthController.login)
-    
-};
+  app.post('/register',
+    AuthenticationControllerPolicy.register,
+    AuthenticationController.register)
+  app.post('/login',
+    AuthenticationController.login)
 
+  app.get('/songs',
+    SongsController.index)
+  app.get('/songs/:songId',
+    SongsController.show)
+  app.put('/songs/:songId',
+    SongsController.put)
+  app.post('/songs',
+    SongsController.post)
+}
