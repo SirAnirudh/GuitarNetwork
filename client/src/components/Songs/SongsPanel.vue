@@ -93,7 +93,7 @@ export default {
 }
 
 .album-image {
-  width: 70%;
+  width: 20%;
   margin: 0 auto;
 }
 </style>

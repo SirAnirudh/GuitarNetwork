@@ -1,4 +1,5 @@
 const {Song} = require('../models')
+const { Op } = require('sequelize'); 
 
 module.exports = {
   async index (req, res) {
@@ -8,11 +9,11 @@ module.exports = {
       if (search) {
         songs = await Song.findAll({
           where: {
-            $or: [
+            [Op.or]: [
               'title', 'artist', 'genre', 'album'
             ].map(key => ({
               [key]: {
-                $like: `%${search}%`
+                [Op.like]: `%${search}%`
               }
             }))
           }

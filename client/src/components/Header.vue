@@ -7,7 +7,7 @@
         :to="{
           name: 'songs'
         }">
-        TabTracker
+        GuitarNetwork
       </router-link>
     </v-toolbar-title>
 

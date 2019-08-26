@@ -1,27 +1,21 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const morgan = require('morgan');
-const {sequelize} = require('./models');
-const app = express();
-const config = require('./config/config');
+const express = require('express')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const morgan = require('morgan')
+const {sequelize} = require('./models')
+const config = require('./config/config')
 
+const app = express()
+app.use(morgan('combined'))
+app.use(bodyParser.json())
+app.use(cors())
 
+require('./passport')
 
-//handle logs
-//app.use(morgan('combined'));
+require('./routes')(app)
 
-//allow app to parse json requests
-app.use(bodyParser.json());
-
-//allow worldwide client to access this
-app.use(cors());
-
-
-require('./routes') (app);
-
-//setup backend localhost ONCE sequelize has synced with the sql lite database
-sequelize.sync({force: false}).then(() =>{
-    app.listen(config.port);
-    console.log("server has started on port 8081")
-});
+sequelize.sync({force: false})
+  .then(() => {
+    app.listen(config.port)
+    console.log(`Server started on port ${config.port}`)
+  })
