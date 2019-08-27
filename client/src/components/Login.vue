@@ -2,16 +2,22 @@
   <v-layout column>
     <v-flex xs6 offset-xs3>
       <panel title="Login">
+        <form
+        name="tab-tracker-form"
+          autocomplete="off">
         <v-text-field
+          autocomplete="off"
           label="Email"
           v-model="email"
         ></v-text-field>
         <br>
         <v-text-field
+          autocomplete="off"
           label="Password"
           type="password"
           v-model="password"
         ></v-text-field>
+        </form>
         <br>
         <div class="danger-alert" v-html="error" />
         <br>
