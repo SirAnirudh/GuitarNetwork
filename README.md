@@ -2,7 +2,7 @@
  An app for Guitar Players. The functionality of the app is to let users practice their guitar skills in a collaborative environment. Users should be able to upload and buy verified guitar tabs for a variety songs. They should be able to view other user profiles and access their content. 
 
 # Progress
-
+![](/images/capuure_1.png)  |  ![](/images/Capture_2.png) | ![](/images/Capture_3.png) | ![](/images/Capture_4.png) ![](/images/Capture_5.png)
 
 # To-Do
  - implement automatic lyrics generation using MusicMatch API </br>
